@@ -1,0 +1,41 @@
+<md-card>
+    <md-card-header>
+        <md-card-avatar>
+            <md-icon md-font-set="material-icons"> speaker</md-icon>
+        </md-card-avatar>
+        <md-card-header-text>
+            <span class="md-title">Ultrasonic</span>
+            <span class="md-subhead">in cm</span>
+        </md-card-header-text>
+    </md-card-header>
+    <md-progress-linear ng-show="spinnerUltrasonic" md-mode="query"></md-progress-linear>
+    <md-card-content>
+        <div ng-show="!liveUltrasonic">
+            <div layout="row" layout-xs="column">
+                <div flex>
+                    <md-datepicker ng-model="ultrasonicStartDate"
+                                   md-placeholder="Start date"></md-datepicker>
+                </div>
+                <div flex>
+                    <md-datepicker ng-model="ultrasonicEndDate" md-placeholder="End date"
+                                   ng-change="getUltrasonicData()"></md-datepicker>
+                </div>
+            </div>
+        </div>
+        <p align="center" ng-show="ultrasonicNoData">Sorry :( No data.</p>
+        <canvas ng-show="liveUltrasonic" height="200" id="ultrasonicLive" class="chart chart-line"
+                chart-data="ultrasonicData"
+                chart-labels="ultrasonicLabel" chart-options="liveOptionsUltrasonic">
+        </canvas>
+        <canvas ng-show="!liveUltrasonic" height="180" id="ultrasonicHistory" class="chart chart-line"
+                chart-data="ultrasonicDataHistory"
+                chart-labels="ultrasonicLabelHistory" chart-options="liveOptionsUltrasonicHistory">
+        </canvas>
+    </md-card-content>
+    <md-divider></md-divider>
+    <md-card-actions layout="row" layout-align="end center">
+        <md-switch ng-model="liveUltrasonic" ng-click="toggleUltrasonicLive()" aria-label="Livedata">
+            Live
+        </md-switch>
+    </md-card-actions>
+</md-card>

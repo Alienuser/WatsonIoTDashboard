@@ -1,0 +1,11 @@
+<md-dialog layout-padding>
+    <md-dialog-content>
+        <p align="center">Your message has an sentiment-value of {{ sentiment }}.</p>
+        <p align="center"><img ng-src="img/{{ sentimentimage }}.png" alt="{{ sentiment }}"/></p>
+    </md-dialog-content>
+    <md-dialog-actions>
+        <md-button ng-click="close()" class="md-warn">
+            Close
+        </md-button>
+    </md-dialog-actions>
+</md-dialog>

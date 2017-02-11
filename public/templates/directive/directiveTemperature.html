@@ -1,0 +1,36 @@
+<md-card>
+    <md-card-header>
+        <md-card-avatar>
+            <md-icon md-font-set="material-icons"> ac_unit</md-icon>
+        </md-card-avatar>
+        <md-card-header-text>
+            <span class="md-title">Temperature</span>
+            <span class="md-subhead">in °C</span>
+        </md-card-header-text>
+    </md-card-header>
+    <md-progress-linear ng-show="spinnerTemperature" md-mode="query"></md-progress-linear>
+    <md-card-content>
+        <div ng-show="!liveTemperature">
+            <div layout="row" layout-xs="column">
+                <div flex>
+                    <md-datepicker ng-model="temperatureStartDate"
+                                   md-placeholder="Start date"></md-datepicker>
+                </div>
+                <div flex>
+                    <md-datepicker ng-model="temperaturEndDate" md-placeholder="End date"
+                                   ng-change="getTemperatureData()"></md-datepicker>
+                </div>
+            </div>
+        </div>
+        <p align="center" ng-show="temperatureNoData">Sorry :( No data.</p>
+        <canvas height="200" id="temperaturLive" class="chart chart-line"
+                chart-data="temperatureData"
+                chart-labels="temperatureLabel" chart-options="liveOptionsTemperature"></canvas>
+    </md-card-content>
+    <md-divider></md-divider>
+    <md-card-actions layout="row" layout-align="end center">
+        <md-switch ng-model="liveTemperature" ng-click="toggleTemperatureLive()" aria-label="Livedata">
+            Live
+        </md-switch>
+    </md-card-actions>
+</md-card>

@@ -1,0 +1,7 @@
+applications:
+- path: .
+  memory: 512M
+  instances: 1
+  domain: mybluemix.net
+  name: WatsonIoT-Dashboard
+  host: watsoniot-dashboard

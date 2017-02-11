@@ -1,0 +1,57 @@
+<div ng-controller="controllerSidenav">
+    <md-sidenav
+            layout="column"
+            class="md-sidenav-left md-whiteframe-z2"
+            md-component-id="left"
+            md-is-locked-open="$mdMedia('')">
+
+        <md-toolbar class="md-theme-indigo" id="toolbarNavigation">
+            <h1 class="md-toolbar-tools">Navigation</h1>
+        </md-toolbar>
+
+        <md-list>
+            <md-subheader class="md-no-sticky">Dashboards</md-subheader>
+            <md-list-item ng-click="menuGrovePiMaster()">
+                <md-icon md-font-set="material-icons"> android</md-icon>
+                <p>Demonstration</p>
+            </md-list-item>
+            <md-list-item ng-click="menuGrovePiTJ()">
+                <md-icon md-font-set="material-icons"> bubble_chart</md-icon>
+                <p>TJ Bot</p>
+            </md-list-item>
+            <md-list-item ng-click="menuGrovePiFurby()">
+                <md-icon md-font-set="material-icons"> bubble_chart</md-icon>
+                <p>Furby</p>
+            </md-list-item>
+            <md-divider></md-divider>
+            <md-subheader class="md-no-sticky">Education</md-subheader>
+            <md-list-item ng-click="menuGrovePi1()">
+                <md-icon md-font-set="material-icons"> extension</md-icon>
+                <p>GrovePi 1</p>
+            </md-list-item>
+            <md-list-item ng-click="menuGrovePi2()">
+                <md-icon md-font-set="material-icons"> extension</md-icon>
+                <p>GrovePi 2</p>
+            </md-list-item>
+            <md-list-item ng-click="menuGrovePi3()">
+                <md-icon md-font-set="material-icons"> extension</md-icon>
+                <p>GrovePi 3</p>
+            </md-list-item>
+            <md-list-item ng-click="menuGrovePi4()">
+                <md-icon md-font-set="material-icons"> extension</md-icon>
+                <p>GrovePi 4</p>
+            </md-list-item>
+            <md-list-item ng-click="menuGrovePi5()">
+                <md-icon md-font-set="material-icons"> extension</md-icon>
+                <p>GrovePi 5</p>
+            </md-list-item>
+            <md-divider></md-divider>
+            <md-subheader class="md-no-sticky">Allgemein</md-subheader>
+            <md-list-item ng-click="menuSettings()">
+                <md-icon md-font-set="material-icons"> settings</md-icon>
+                <p>Einstellungen</p>
+            </md-list-item>
+        </md-list>
+        <p id="version">Version 0.9.9</p>
+    </md-sidenav>
+</div>

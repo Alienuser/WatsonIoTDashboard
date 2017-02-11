@@ -1,0 +1,37 @@
+<md-card>
+    <md-card-header>
+        <md-card-avatar>
+            <md-icon md-font-set="material-icons"> cloud</md-icon>
+        </md-card-avatar>
+        <md-card-header-text>
+            <span class="md-title">Humidity</span>
+            <span class="md-subhead">in %</span>
+        </md-card-header-text>
+    </md-card-header>
+    <md-progress-linear ng-show="spinnerHumidity" md-mode="query"></md-progress-linear>
+    <md-card-content>
+        <div ng-show="!liveHumidity">
+            <div layout="row">
+                <div flex>
+                    <md-datepicker ng-model="humidityStartDate" md-placeholder="Start date"></md-datepicker>
+                </div>
+                <div flex>
+                    <md-datepicker ng-model="humidityEndDate" md-placeholder="End date"
+                                   ng-change="getHumidityData()"></md-datepicker>
+                </div>
+            </div>
+        </div>
+        <p align="center" ng-show="humidityNoData">Sorry :( No data.</p>
+        <canvas height="200" id="humidityTemp" class="chart chart-line"
+                chart-data="humidityData"
+                chart-labels="humidityLabel"
+                chart-options="liveOptionsHumidity">
+        </canvas>
+    </md-card-content>
+    <md-divider></md-divider>
+    <md-card-actions layout="row" layout-align="end center">
+        <md-switch ng-model="liveHumidity" ng-change="toggleHumidityLive()" aria-label="Livedata">
+            Live
+        </md-switch>
+    </md-card-actions>
+</md-card>

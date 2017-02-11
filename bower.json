@@ -1,0 +1,17 @@
+{
+  "name": "WatsonIoTDashboard",
+  "description": "The IoT Dashboard for Watson Demonstrations.",
+  "authors": [
+    "Lars Helmuth Probst <larshprobst@de.ibm.com>",
+    "Olaf Hahn <olaf_hahn@at.ibm.com>"
+  ],
+  "dependencies": {
+    "angular-material": "*",
+    "angular-route": "*",
+    "angular-chart.js": "0.10.2",
+    "Chart.js": "1.1.1",
+    "angular-hotkeys": "chieffancypants/angular-hotkeys#*",
+    "angular-gridster": "*",
+    "jquery": "*"
+  }
+}

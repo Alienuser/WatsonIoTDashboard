@@ -1,0 +1,232 @@
+<h3 class="md-headline">Einstellungen</h3>
+<div layout="row" style="height: 1550px">
+    <div flex="35">
+        <md-card id="settings1">
+            <md-card-header>
+                <md-card-header-text>
+                    <span class="md-title">Allgemein</span>
+                </md-card-header-text>
+            </md-card-header>
+            <md-divider></md-divider>
+            <md-card-content>
+                <p>Hier kannst du den Browserspeicher leeren.</p>
+                <p align="right">
+                    <md-button class="md-raised" ng-click="deleteLocalStorage()">Speicher leeren</md-button>
+                </p>
+            </md-card-content>
+        </md-card>
+    </div>
+    <div flex="65">
+        <md-card id="settings2">
+            <md-card-header>
+                <md-card-header-text>
+                    <span class="md-title">URLs</span>
+                </md-card-header-text>
+            </md-card-header>
+            <md-divider></md-divider>
+            <md-card-content>
+                <div layout="row">
+                    <div flex="10">
+                        <p><strong>GrovePi 0:</strong></p>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="10"></div>
+                    <div flex="90">
+                        <md-input-container class="md-block">
+                            <label>Websocket</label>
+                            <textarea ng-model="nodered_0"></textarea>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="10"></div>
+                    <div flex="90">
+                        <md-input-container class="md-block">
+                            <label>RestAPI</label>
+                            <textarea ng-model="restapi_0"></textarea>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="10"></div>
+                    <div flex="90">
+                        <md-input-container class="md-block">
+                            <label>Database</label>
+                            <textarea ng-model="database_0"></textarea>
+                        </md-input-container>
+                    </div>
+                </div>
+                <md-divider></md-divider>
+                <div layout="row">
+                    <div flex="10">
+                        <p><strong>GrovePi 1:</strong></p>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="10"></div>
+                    <div flex="90">
+                        <md-input-container class="md-block">
+                            <label>Websocket</label>
+                            <textarea ng-model="nodered_1"></textarea>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="10"></div>
+                    <div flex="90">
+                        <md-input-container class="md-block">
+                            <label>RestAPI</label>
+                            <textarea ng-model="restapi_1"></textarea>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="10"></div>
+                    <div flex="90">
+                        <md-input-container class="md-block">
+                            <label>Database</label>
+                            <textarea ng-model="database_1"></textarea>
+                        </md-input-container>
+                    </div>
+                </div>
+                <md-divider></md-divider>
+                <div layout="row">
+                    <div flex="10">
+                        <p><strong>GrovePi 2:</strong></p>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="10"></div>
+                    <div flex="90">
+                        <md-input-container class="md-block">
+                            <label>Websocket</label>
+                            <textarea ng-model="nodered_2"></textarea>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="10"></div>
+                    <div flex="90">
+                        <md-input-container class="md-block">
+                            <label>RestAPI</label>
+                            <textarea ng-model="restapi_2"></textarea>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="10"></div>
+                    <div flex="90">
+                        <md-input-container class="md-block">
+                            <label>Database</label>
+                            <textarea ng-model="database_2"></textarea>
+                        </md-input-container>
+                    </div>
+                </div>
+                <md-divider></md-divider>
+                <div layout="row">
+                    <div flex="10">
+                        <p><strong>GrovePi 3:</strong></p>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="10"></div>
+                    <div flex="90">
+                        <md-input-container class="md-block">
+                            <label>Websocket</label>
+                            <textarea ng-model="nodered_3"></textarea>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="10"></div>
+                    <div flex="90">
+                        <md-input-container class="md-block">
+                            <label>RestAPI</label>
+                            <textarea ng-model="restapi_3"></textarea>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="10"></div>
+                    <div flex="90">
+                        <md-input-container class="md-block">
+                            <label>Database</label>
+                            <textarea ng-model="database_3"></textarea>
+                        </md-input-container>
+                    </div>
+                </div>
+                <md-divider></md-divider>
+                <div layout="row">
+                    <div flex="10">
+                        <p><strong>GrovePi 4:</strong></p>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="10"></div>
+                    <div flex="90">
+                        <md-input-container class="md-block">
+                            <label>Websocket</label>
+                            <textarea ng-model="nodered_4"></textarea>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="10"></div>
+                    <div flex="90">
+                        <md-input-container class="md-block">
+                            <label>RestAPI</label>
+                            <textarea ng-model="restapi_4"></textarea>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="10"></div>
+                    <div flex="90">
+                        <md-input-container class="md-block">
+                            <label>Database</label>
+                            <textarea ng-model="database_4"></textarea>
+                        </md-input-container>
+                    </div>
+                </div>
+                <md-divider></md-divider>
+                <div layout="row">
+                    <div flex="10">
+                        <p><strong>GrovePi 5:</strong></p>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="10"></div>
+                    <div flex="90">
+                        <md-input-container class="md-block">
+                            <label>Websocket</label>
+                            <textarea ng-model="nodered_5"></textarea>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="10"></div>
+                    <div flex="90">
+                        <md-input-container class="md-block">
+                            <label>RestAPI</label>
+                            <textarea ng-model="restapi_5"></textarea>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="10"></div>
+                    <div flex="90">
+                        <md-input-container class="md-block">
+                            <label>Database</label>
+                            <textarea ng-model="database_0"></textarea>
+                        </md-input-container>
+                    </div>
+                </div>
+                <md-divider></md-divider>
+                <p align="right">
+                    <md-button class="md-raised" ng-click="updateUrls()">Speichern</md-button>
+                </p>
+            </md-card-content>
+        </md-card>
+    </div>
+</div>

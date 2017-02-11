@@ -1,0 +1,19 @@
+<md-toolbar ng-controller="controllerToolbar">
+    <div class="md-toolbar-tools">
+        <md-button aria-label="Navigation" class="md-icon-button" ng-click="toggleMenu()">
+            <md-icon md-font-set="material-icons"> menu</md-icon>
+        </md-button>
+        <md-button aria-label="Bluemix iot" class="md-icon-button" ng-click="openHome()">
+            <md-icon md-svg-src="img/bluemix.svg"
+                     aria-label="Bluemix iot"></md-icon>
+        </md-button>
+        <h2>
+            <span>Watson IoT Dashboard</span>
+        </h2>
+        <span flex></span>
+        <md-button aria-label="Refresh" class="md-icon-button" ng-click="refresh()">
+            <md-icon md-font-set="material-icons"> refresh</md-icon>
+            <md-tooltip>Seite neu laden.</md-tooltip>
+        </md-button>
+    </div>
+</md-toolbar>

@@ -1,0 +1,81 @@
+<md-dialog layout-padding>
+    <md-dialog-content>
+        <h3 class="md-headline">Message</h3>
+        <p>Please enter the message:</p>
+        <md-input-container class="md-block">
+            <label>Message</label>
+            <textarea ng-model="message" md-maxlength="100" rows="4" md-autofocus></textarea>
+        </md-input-container>
+        <h3 class="md-headline">Language</h3>
+        <p>Please select the source and destination language:</p>
+        <div layout="row" layout-xs="column">
+            <div flex>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>From</label>
+                    <md-select ng-model="src">
+                        <md-option value="de">
+                            German
+                        </md-option>
+                        <md-option value="fr">
+                            French
+                        </md-option>
+                        <md-option value="it">
+                            Italian
+                        </md-option>
+                        <md-option value="sp">
+                            Spanish
+                        </md-option>
+                        <md-option value="en">
+                            English
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+            </div>
+            <div flex>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>To</label>
+                    <md-select ng-model="dest" ng-change="changeVoice()">
+                        <md-option value="de">
+                            German
+                        </md-option>
+                        <md-option value="fr">
+                            French
+                        </md-option>
+                        <md-option value="it">
+                            Italian
+                        </md-option>
+                        <md-option value="sp">
+                            Spanish
+                        </md-option>
+                        <md-option value="en">
+                            English
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+            </div>
+        </div>
+        <h3 class="md-headline">Voice</h3>
+        <p>Please select the voice:</p>
+        <div ng-show="!voiceSentimate">
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Voice</label>
+                <md-select ng-model="person">
+                    <md-option ng-repeat="voice in voices" value="{{ voice.send }}">
+                        {{ voice.name }}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+        </div>
+        <md-checkbox ng-model="voiceSentimate" aria-label="voice on sentimate">
+            change voice on sentimate
+        </md-checkbox>
+    </md-dialog-content>
+    <md-dialog-actions>
+        <md-button ng-click="close()" class="md-primary">
+            Close
+        </md-button>
+        <md-button ng-click="send()" class="md-warn">
+            Speak
+        </md-button>
+    </md-dialog-actions>
+</md-dialog>

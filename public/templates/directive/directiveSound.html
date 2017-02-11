@@ -1,0 +1,42 @@
+<md-card>
+    <md-card-header>
+        <md-card-avatar>
+            <md-icon md-font-set="material-icons"> surround_sound</md-icon>
+        </md-card-avatar>
+        <md-card-header-text>
+            <span class="md-title">Sound</span>
+            <span class="md-subhead">in bel</span>
+        </md-card-header-text>
+    </md-card-header>
+    <md-progress-linear ng-show="spinnerSound" md-mode="query"></md-progress-linear>
+    <md-card-content>
+        <div ng-show="!liveSound">
+            <div layout="row" layout-xs="column">
+                <div flex>
+                    <md-datepicker ng-model="soundStartDate" md-placeholder="Start date"></md-datepicker>
+                </div>
+                <div flex>
+                    <md-datepicker ng-model="soundEndDate" md-placeholder="End date"
+                                   ng-change="getSoundData()"></md-datepicker>
+                </div>
+            </div>
+        </div>
+        <p align="center" ng-show="soundNoData">Sorry :( No data.</p>
+        <canvas ng-show="liveSound" height="200" id="soundLive" class="chart chart-line"
+                chart-data="soundData"
+                chart-labels="soundLabel"
+                chart-options="liveOptionsSound">
+        </canvas>
+        <canvas ng-show="!liveSound" height="180" id="soundHistory" class="chart chart-line"
+                chart-data="soundDataHistory"
+                chart-labels="soundLabelHistory"
+                chart-options="liveOptionsSoundHistory">
+        </canvas>
+    </md-card-content>
+    <md-divider></md-divider>
+    <md-card-actions layout="row" layout-align="end center">
+        <md-switch ng-model="liveSound" ng-click="toggleSoundLive()" aria-label="Livedata">
+            Live
+        </md-switch>
+    </md-card-actions>
+</md-card>

@@ -1,0 +1,21 @@
+{
+  "name": "WatsonIoTDashboard",
+  "description": "The IoT Dashboard for Watson Demonstrations.",
+  "authors": [
+    "Lars Helmuth Probst <larshprobst@de.ibm.com>",
+    "Olaf Hahn <olaf_hahn@at.ibm.com>"
+  ],
+	"version": "1.0.0",
+	"private": true,
+	"scripts": {
+		"start": "node app.js",
+		"lite": "node_modules/lite-server/bin/lite-server",
+		"postinstall": "node_modules/bower/bin/bower install"
+	},
+	"dependencies": {
+		"express": "*",
+		"cfenv": "*",
+		"bower": "*",
+		"lite-server": "*"
+	}
+}

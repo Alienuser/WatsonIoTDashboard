@@ -1,0 +1,106 @@
+body {
+    overflow-y: hidden !important;
+    width: 100%;
+    height: 100%;
+}
+
+body, #content {
+    background-color: #eee;
+}
+
+md-toolbar:not(.md-menu-toolbar) {
+    background-color: #4178be;
+}
+
+md-card {
+    width: 100%;
+    height: 100%;
+}
+
+md-card-content {
+    height: 100%;
+}
+
+md-slider {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.md-headline {
+    margin: 0 !important;
+}
+
+#toolbarNavigation {
+    background-color: #6393D0;
+}
+
+#red-slider .md-thumb:after, #red-slider .md-track {
+    background-color: #F44336 !important;
+    border-color: #F44336 !important;
+}
+
+#red-slider .md-focus-thumb, #red-slider .md-focus-ring {
+    background-color: #F44336;
+}
+
+#green-slider .md-thumb:after, #green-slider .md-track {
+    background-color: #4CAF50 !important;
+    border-color: #4CAF50 !important;
+}
+
+#green-slider .md-focus-thumb, #green-slider .md-focus-ring {
+    background-color: #4CAF50;
+}
+
+#blue-slider .md-thumb:after, #blue-slider .md-track {
+    background-color: #2196F3 !important;
+    border-color: #2196F3 !important;
+}
+
+#blue-slider .md-focus-thumb, #blue-slider .md-focus-ring {
+    background-color: #2196F3;
+}
+
+#settings1 {
+    height: auto;
+    width: auto;
+}
+
+#settings2 {
+    height: auto;
+    width: auto;
+}
+
+#settings2 md-input-container {
+    margin: 0;
+}
+
+#spinner {
+    position: fixed;
+    z-index: 99;
+    left: calc(50% - 46px);
+    top: calc(50% - 46px);
+}
+
+#version {
+    font-size: 12px;
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+}
+
+#fabQR {
+    position: fixed;
+    bottom: 16px;
+    right: 86px;
+}
+
+#fabMessageApp {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+}
+
+#speakMessage {
+    color: #757575;
+}

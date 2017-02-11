@@ -1,0 +1,19 @@
+<md-dialog layout-padding>
+    <md-dialog-content>
+        <h3 class="md-headline" align="center">Change the leds!</h3>
+        <md-switch ng-model="red" aria-label="green" ng-change="set('red', red)">
+            red &nbsp;&nbsp;&nbsp;&nbsp;{{red}}
+        </md-switch>
+        <md-switch ng-model="green" aria-label="green" ng-change="set('green', green)">
+            green &nbsp;&nbsp;&nbsp;&nbsp;{{green}}
+        </md-switch>
+        <md-switch ng-model="blue" aria-label="blue" ng-change="set('blue', blue)">
+            blue &nbsp;&nbsp;&nbsp;&nbsp;{{blue}}
+        </md-switch>
+    </md-dialog-content>
+    <md-dialog-actions>
+        <md-button ng-click="close()" class="md-primary">
+            Close
+        </md-button>
+    </md-dialog-actions>
+</md-dialog>

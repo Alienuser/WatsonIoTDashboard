@@ -1,0 +1,31 @@
+<div ng-controller="controllerFabApps">
+    <md-fab-speed-dial id="fabMessageApp" md-direction="up" class="md-scale speed-dial">
+        <md-fab-trigger>
+            <md-button aria-label="Menu" class="md-fab md-warn" id="fabDial">
+                <md-icon md-font-set="material-icons"> apps</md-icon>
+            </md-button>
+        </md-fab-trigger>
+        <md-fab-actions>
+            <md-button aria-label="Add" class="md-fab md-raised md-mini" ng-click="openInput(dashboard)">
+                <md-icon md-font-set="material-icons"> message</md-icon>
+                <md-tooltip md-direction="left" hide show-gt-md>Send message</md-tooltip>
+            </md-button>
+            <md-button aria-label="Add" class="md-fab md-raised md-mini" ng-click="changeColor(dashboard)">
+                <md-icon md-font-set="material-icons"> color_lens</md-icon>
+                <md-tooltip md-direction="left" hide show-gt-md>Change color</md-tooltip>
+            </md-button>
+            <md-button aria-label="Add" class="md-fab md-raised md-mini" ng-click="playSound(dashboard)">
+                <md-icon md-font-set="material-icons"> surround_sound</md-icon>
+                <md-tooltip md-direction="left" hide show-gt-md>Play Sound</md-tooltip>
+            </md-button>
+            <md-button aria-label="Add" class="md-fab md-raised md-mini" ng-click="changeLed(dashboard)">
+                <md-icon md-font-set="material-icons"> lightbulb_outline</md-icon>
+                <md-tooltip md-direction="left" hide show-gt-md>LED anpassen</md-tooltip>
+            </md-button>
+            <md-button aria-label="Add" class="md-fab md-raised md-mini" ng-click="changeBuzzer(dashboard)">
+                <md-icon md-font-set="material-icons"> speaker</md-icon>
+                <md-tooltip md-direction="left" hide show-gt-md>Buzzer</md-tooltip>
+            </md-button>
+        </md-fab-actions>
+    </md-fab-speed-dial>
+</div>

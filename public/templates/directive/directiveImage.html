@@ -1,0 +1,28 @@
+<md-card>
+    <md-card-header>
+        <md-card-avatar>
+            <md-icon md-font-set="material-icons"> image</md-icon>
+        </md-card-avatar>
+        <md-card-header-text>
+            <span class="md-title">Take a picture</span>
+            <span class="md-subhead">detect gender and age</span>
+        </md-card-header-text>
+    </md-card-header>
+    <md-progress-linear ng-show="spinnerImage" md-mode="query"></md-progress-linear>
+    <md-card-content>
+        <div ng-show="showImage">
+            <p align="center">
+                <img ng-show="!spinnerImage" ng-src="{{ picture }}" width="50%" height="50%" alt="Latest image"
+                     title="Latest image"/>
+            <p align="center" ng-show="!spinnerImage"><strong>Gender:</strong> {{ gender }} | <strong>Age:</strong> {{
+                age }}</p>
+            </p>
+        </div>
+    </md-card-content>
+    <md-card-actions layout="row" layout-align="center center">
+        <md-button ng-show="!spinnerImage" ng-click="takeImage(dashboard)" class="md-raised" style="margin-bottom: 20px">
+            <md-icon md-font-set="material-icons"> camera</md-icon>
+            take picture
+        </md-button>
+    </md-card-actions>
+</md-card>

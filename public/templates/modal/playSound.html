@@ -1,0 +1,45 @@
+<md-dialog layout-padding>
+    <md-dialog-content>
+        <h3 class="md-headline" align="center">Play a Sound!</h3>
+        <p>Which sound do you want to play?</p>
+        <md-switch ng-model="ownSound" aria-label="own sound">
+            Play own sound
+        </md-switch>
+        <div ng-show="!ownSound">
+            <md-input-container class="md-block" flex-gt-sm md-autofocus>
+                <label>Sound</label>
+                <md-select ng-model="soundFile">
+                    <md-option value="watson-1">
+                        Hi to IBM
+                    </md-option>
+                    <md-option value="watson-2">
+                        Ever on wart
+                    </md-option>
+                    <md-option value="watson-3">
+                        Marchon
+                    </md-option>
+                    <md-option value="watson-4">
+                        Laughting
+                    </md-option>
+                    <md-option value="watson-5">
+                        Minions
+                    </md-option>
+                </md-select>
+            </md-input-container>
+        </div>
+        <div ng-show="ownSound">
+            <md-input-container class="md-block">
+                <label>Sound name</label>
+                <textarea ng-model="soundFile"></textarea>
+            </md-input-container>
+        </div>
+    </md-dialog-content>
+    <md-dialog-actions>
+        <md-button ng-click="close()" class="md-primary">
+            Close
+        </md-button>
+        <md-button ng-click="send()" class="md-warn">
+            Send
+        </md-button>
+    </md-dialog-actions>
+</md-dialog>

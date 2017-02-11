@@ -1,0 +1,95 @@
+<html lang="en">
+<head>
+    <title>Watson IoT Dashboard</title>
+
+    <!-- Browser settings -->
+    <meta name="theme-color" content="#4178be">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Include libraries -->
+    <link rel="stylesheet" href="lib/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="lib/angular-chart.js/dist/angular-chart.css">
+    <link rel="stylesheet" href="lib/angular-hotkeys/build/hotkeys.min.css">
+    <link rel="stylesheet" href="lib/angular-gridster/dist/angular-gridster.min.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Include own stylesheet -->
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body ng-app="cebit" layout="column" ng-cloak>
+
+<section layout="row" flex>
+
+    <!-- Include the sidenav -->
+    <div ng-include="'templates/general/sidenav.html'"></div>
+
+    <md-content flex id="content">
+
+        <!-- Include the toolbar -->
+        <div ng-include="'templates/general/toolbar.html'"></div>
+
+        <!-- Include the content -->
+        <div ng-view layout-padding></div>
+
+    </md-content>
+
+</section>
+
+<!-- Spinner -->
+<md-progress-circular id="spinner" ng-show="spinnerMode" md-mode="indeterminate" md-diameter="96"></md-progress-circular>
+
+<!-- Include fabs -->
+<div hide-xs ng-include="'templates/general/qrcode.html'" ng-controller="controllerQRMain"></div>
+
+<!-- Include Libraries -->
+<script src="lib/angular/angular.min.js"></script>
+<script src="lib/angular-material/angular-material.min.js"></script>
+<script src="lib/angular-animate/angular-animate.min.js"></script>
+<script src="lib/angular-aria/angular-aria.min.js"></script>
+<script src="lib/angular-messages/angular-messages.min.js"></script>
+<script src="lib/angular-route/angular-route.min.js"></script>
+<script src="lib/Chart.js/Chart.js"></script>
+<script src="lib/angular-chart.js/angular-chart.js"></script>
+<script src="lib/angular-hotkeys/build/hotkeys.min.js"></script>
+<script src="lib/jquery/dist/jquery.min.js"></script>
+<script src="lib/javascript-detect-element-resize/jquery.resize.js"></script>
+<script src="lib/angular-gridster/dist/angular-gridster.min.js"></script>
+
+<!-- Include own javascript -->
+<script src="js/app.js"></script>
+
+<!-- Controller -->
+<script src="js/controller/controllerToolbar.js"></script>
+<script src="js/controller/controllerSidenav.js"></script>
+<script src="js/controller/controllerDemonstration.js"></script>
+<script src="js/controller/controllerGrovepi1.js"></script>
+<script src="js/controller/controllerGrovepi2.js"></script>
+<script src="js/controller/controllerGrovepi3.js"></script>
+<script src="js/controller/controllerGrovepi4.js"></script>
+<script src="js/controller/controllerGrovepi5.js"></script>
+<script src="js/controller/controllerSettings.js"></script>
+<script src="js/controller/controllerQRMain.js"></script>
+<script src="js/controller/controllerFabApps.js"></script>
+
+<!-- Factories -->
+<script src="js/factory/factoryDb.js"></script>
+<script src="js/factory/factorySocket.js"></script>
+<script src="js/factory/factoryApps.js"></script>
+<script src="js/factory/factoryImage.js"></script>
+<script src="js/factory/factorySpeak.js"></script>
+<script src="js/factory/factoryHumidity.js"></script>
+<script src="js/factory/factoryTemperature.js"></script>
+<script src="js/factory/factoryWeather.js"></script>
+
+<!-- Directive -->
+<script src="js/directive/directiveHumidity.js"></script>
+<script src="js/directive/directiveTemperature.js"></script>
+<script src="js/directive/directiveUltrasonic.js"></script>
+<script src="js/directive/directiveSound.js"></script>
+<script src="js/directive/directiveLight.js"></script>
+<script src="js/directive/directiveImage.js"></script>
+<script src="js/directive/directiveWeather.js"></script>
+<script src="js/directive/directiveSpeak.js"></script>
+
+</body>
+</html>

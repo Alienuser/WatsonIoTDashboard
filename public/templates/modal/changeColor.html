@@ -1,0 +1,31 @@
+<md-dialog layout-padding>
+    <md-dialog-content>
+        <md-slider-container>
+            <h3 class="md-headline" align="center">Change the color!</h3>
+            <md-slider flex md-discrete min="0" max="255" ng-model="red" aria-label="red" id="red-slider"
+                       class="md-primary" ng-change="send()" md-autofocus>
+            </md-slider>
+        </md-slider-container>
+        <md-slider-container>
+            <md-slider flex md-discrete ng-model="green" min="0" max="255" aria-label="green" id="green-slider"
+                       class="md-primary" ng-change="send()">
+            </md-slider>
+        </md-slider-container>
+        <md-slider-container>
+            <md-slider flex md-discrete ng-model="blue" min="0" max="255" aria-label="blue" id="blue-slider"
+                       class="md-primary" ng-change="send()">
+            </md-slider>
+            <p align="center">Color: <span
+                    ng-attr-style="border: 1px solid #333; background: rgb({{red}},{{green}},{{blue}})">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            </p>
+        </md-slider-container>
+    </md-dialog-content>
+    <md-dialog-actions>
+        <md-button ng-click="disable()" class="md-warn">
+            Switch off
+        </md-button>
+        <md-button ng-click="close()" class="md-primary">
+            Close
+        </md-button>
+    </md-dialog-actions>
+</md-dialog>

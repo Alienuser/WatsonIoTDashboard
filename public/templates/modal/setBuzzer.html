@@ -1,0 +1,13 @@
+<md-dialog layout-padding>
+    <md-dialog-content>
+        <h3 class="md-headline" align="center">Play the buzzer!</h3>
+        <md-switch ng-model="status" aria-label="status" ng-change="set()">
+            Status: {{status}}
+        </md-switch>
+    </md-dialog-content>
+    <md-dialog-actions>
+        <md-button ng-click="close()" class="md-primary">
+            Close
+        </md-button>
+    </md-dialog-actions>
+</md-dialog>

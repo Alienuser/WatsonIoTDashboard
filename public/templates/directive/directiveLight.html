@@ -1,0 +1,42 @@
+<md-card>
+    <md-card-header>
+        <md-card-avatar>
+            <md-icon md-font-set="material-icons"> highlight</md-icon>
+        </md-card-avatar>
+        <md-card-header-text>
+            <span class="md-title">Light</span>
+            <span class="md-subhead">in Lumen</span>
+        </md-card-header-text>
+    </md-card-header>
+    <md-progress-linear ng-show="spinnerLight" md-mode="query"></md-progress-linear>
+    <md-card-content>
+        <div ng-show="!liveLight">
+            <div layout="row" layout-xs="column">
+                <div flex>
+                    <md-datepicker ng-model="lightStartDate" md-placeholder="Start date"></md-datepicker>
+                </div>
+                <div flex>
+                    <md-datepicker ng-model="lightEndDate" md-placeholder="End date"
+                                   ng-change="getLightData()"></md-datepicker>
+                </div>
+            </div>
+        </div>
+        <p align="center" ng-show="lightNoData">Sorry :( No data.</p>
+        <canvas ng-show="liveLight" height="200" id="lightLive" class="chart chart-line"
+                chart-data="lightData"
+                chart-labels="lightLabel"
+                chart-options="liveOptionsLight">
+        </canvas>
+        <canvas ng-show="!liveLight" height="180" id="lightHistory" class="chart chart-line"
+                chart-data="lightDataHistory"
+                chart-labels="lightLabelHistory"
+                chart-options="liveOptionsLightHistory">
+        </canvas>
+    </md-card-content>
+    <md-divider></md-divider>
+    <md-card-actions layout="row" layout-align="end center">
+        <md-switch ng-model="liveLight" ng-click="toggleLightLive()" aria-label="Livedata">
+            Live
+        </md-switch>
+    </md-card-actions>
+</md-card>
