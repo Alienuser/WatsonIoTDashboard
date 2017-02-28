@@ -12,6 +12,7 @@
     "Chart.js": "1.1.1",
     "angular-hotkeys": "chieffancypants/angular-hotkeys#*",
     "angular-gridster": "*",
-    "jquery": "*"
+    "jquery": "*",
+    "threejs": "*"
   }
 }

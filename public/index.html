@@ -16,7 +16,7 @@
     <!-- Include own stylesheet -->
     <link rel="stylesheet" href="css/app.css">
 </head>
-<body ng-app="cebit" layout="column" ng-cloak>
+<body ng-app="watsoniotdashboard" layout="column" ng-cloak>
 
 <section layout="row" flex>
 
@@ -36,7 +36,8 @@
 </section>
 
 <!-- Spinner -->
-<md-progress-circular id="spinner" ng-show="spinnerMode" md-mode="indeterminate" md-diameter="96"></md-progress-circular>
+<md-progress-circular id="spinner" ng-show="spinnerMode" md-mode="indeterminate"
+                      md-diameter="96"></md-progress-circular>
 
 <!-- Include fabs -->
 <div hide-xs ng-include="'templates/general/qrcode.html'" ng-controller="controllerQRMain"></div>
@@ -54,6 +55,7 @@
 <script src="lib/jquery/dist/jquery.min.js"></script>
 <script src="lib/javascript-detect-element-resize/jquery.resize.js"></script>
 <script src="lib/angular-gridster/dist/angular-gridster.min.js"></script>
+<script src="lib/threejs/build/three.min.js"></script>
 
 <!-- Include own javascript -->
 <script src="js/app.js"></script>
@@ -70,8 +72,10 @@
 <script src="js/controller/controllerSettings.js"></script>
 <script src="js/controller/controllerQRMain.js"></script>
 <script src="js/controller/controllerFabApps.js"></script>
+<script src="js/controller/controllerChatbot.js"></script>
 
 <!-- Factories -->
+<script src="js/factory/factoryApi.js"></script>
 <script src="js/factory/factoryDb.js"></script>
 <script src="js/factory/factorySocket.js"></script>
 <script src="js/factory/factoryApps.js"></script>
@@ -80,8 +84,10 @@
 <script src="js/factory/factoryHumidity.js"></script>
 <script src="js/factory/factoryTemperature.js"></script>
 <script src="js/factory/factoryWeather.js"></script>
+<script src="js/factory/factoryChat.js"></script>
 
 <!-- Directive -->
+<script src="js/directive/directiveIoT.js"></script>
 <script src="js/directive/directiveHumidity.js"></script>
 <script src="js/directive/directiveTemperature.js"></script>
 <script src="js/directive/directiveUltrasonic.js"></script>
@@ -90,6 +96,7 @@
 <script src="js/directive/directiveImage.js"></script>
 <script src="js/directive/directiveWeather.js"></script>
 <script src="js/directive/directiveSpeak.js"></script>
+<script src="js/directive/directiveChatbot.js"></script>
 
 </body>
 </html>

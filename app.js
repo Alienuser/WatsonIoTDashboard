@@ -20,3 +20,8 @@ app.listen(appEnv.port, '0.0.0.0', function () {
     // print a message when the server starts listening
     console.log("server starting on " + appEnv.url);
 });
+
+// Share appEnv variables with app
+app.get('/api/getAppEnv', function (req, res) {
+    return res.send(appEnv.getService('WatsonIoT-NodeRed-ICCWien-cloudantNoSQLDB'));
+});

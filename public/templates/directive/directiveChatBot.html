@@ -1,0 +1,25 @@
+<md-card>
+    <md-card-header>
+        <md-card-avatar>
+            <md-icon md-font-set="material-icons"> chat</md-icon>
+        </md-card-avatar>
+        <md-card-header-text>
+            <span class="md-title">Chat with Watson</span>
+            <span class="md-subhead">ask me anything</span>
+        </md-card-header-text>
+    </md-card-header>
+    <md-card-content>
+        <div ng-repeat="message in messages">
+            <p align="left" ng-if="message.person == 1">{{ message.text }}</p>
+            <p align="right" ng-if="message.person == 2">{{ message.text }}</p>
+        </div>
+    </md-card-content>
+    <md-card-actions layout="row" layout-align="start center">
+        <md-input-container md-no-float class="md-block" style="width: 100%;">
+            <input ng-model="input" placeholder="How can I help you?">
+        </md-input-container>
+        <md-button class="md-icon-button" aria-label="Send">
+            <md-icon md-font-set="material-icons"> send</md-icon>
+        </md-button>
+    </md-card-actions>
+</md-card>

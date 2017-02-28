@@ -104,3 +104,8 @@ md-slider {
 #speakMessage {
     color: #757575;
 }
+
+#iotQrCode {
+    position: absolute;
+    z-index: 99;
+}

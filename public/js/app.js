@@ -1,9 +1,8 @@
-var app = angular.module('cebit', ['ngMaterial', 'ngRoute', 'chart.js', 'cfp.hotkeys', 'gridster']);
+var app = angular.module('watsoniotdashboard', ['ngMaterial', 'ngRoute', 'chart.js', 'cfp.hotkeys', 'gridster']);
 
 // Define all constants.
 app.constant('api', {
-    url_db_view: 'https://d0fdfee0-7f8c-4b52-b3dd-300d03ccc98d-bluemix.cloudant.com/sensor-data/_design/dashboard/_view',
-    url_db_dashboard: 'https://55020a07-ac3a-48ec-b2c9-6bb6de67d5c9-bluemix.cloudant.com/dashboard'
+    url_db_view: 'https://d0fdfee0-7f8c-4b52-b3dd-300d03ccc98d-bluemix.cloudant.com/sensor-data/_design/dashboard/_view'
 });
 
 // Define all the routes for the web app.
@@ -23,6 +22,10 @@ app.config(function ($routeProvider) {
         .when('/dashboard/furby', {
             templateUrl: 'templates/sites/furby.html',
             controller: 'controllerDemonstration'
+        })
+        .when('/chatbot', {
+            templateUrl: 'templates/sites/chatbot.html',
+            controller: 'controllerChatbot'
         })
         .when('/dashboard/demo1', {
             templateUrl: 'templates/sites/grovepi1.html',
@@ -53,7 +56,7 @@ app.config(function ($routeProvider) {
         });
 });
 
-app.run(function ($rootScope, $location, $mdDialog, $mdSidenav, $mdToast, hotkeys, gridsterConfig, $timeout, DB) {
+app.run(function ($rootScope, $location, $mdDialog, $mdSidenav, $mdToast, hotkeys, gridsterConfig, $timeout, Api, DB) {
 
     // Configure gridster
     gridsterConfig.columns = 8;
@@ -106,19 +109,28 @@ app.run(function ($rootScope, $location, $mdDialog, $mdSidenav, $mdToast, hotkey
         }
     });
 
-    // Get the urls from db and save it to localstorage
-    DB.getUrls()
+    // Get appEnv variables
+    Api.getAppEnvVariables()
         .then(function (response) {
-            var data = response.data.rows;
-            for (var i = 0; i < data.length; i++) {
-                localStorage.setItem("did_" + data[i].doc.grovepi, data[i].id);
-                localStorage.setItem("rev_" + data[i].doc.grovepi, data[i].doc._rev);
-                localStorage.setItem("url_nodered_" + data[i].doc.grovepi, data[i].doc.url_nodered);
-                localStorage.setItem("url_rest_" + data[i].doc.grovepi, data[i].doc.url_rest);
-                localStorage.setItem("url_database_" + data[i].doc.grovepi, data[i].doc.url_database);
-            }
-
+            localStorage.setItem('url_db_dashboard', 'https://' + response.data.credentials.host);
+            getDBUrl();
+        }, function errorCallback(response) {
         });
+
+    // Get the urls from db and save it to localstorage
+    function getDBUrl() {
+        DB.getUrls()
+            .then(function (response) {
+                var data = response.data.rows;
+                for (var i = 0; i < data.length; i++) {
+                    localStorage.setItem("did_" + data[i].doc.grovepi, data[i].id);
+                    localStorage.setItem("rev_" + data[i].doc.grovepi, data[i].doc._rev);
+                    localStorage.setItem("url_nodered_" + data[i].doc.grovepi, data[i].doc.url_nodered);
+                    localStorage.setItem("url_rest_" + data[i].doc.grovepi, data[i].doc.url_rest);
+                    localStorage.setItem("url_database_" + data[i].doc.grovepi, data[i].doc.url_database);
+                }
+            });
+    }
 
     // Add all hotkeys
     hotkeys.bindTo($rootScope)
@@ -143,4 +155,5 @@ app.run(function ($rootScope, $location, $mdDialog, $mdSidenav, $mdToast, hotkey
                 $rootScope.toggleMenu();
             }
         });
-});
+})
+;

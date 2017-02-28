@@ -28,7 +28,6 @@
                     $scope.showImage = true;
                     $scope.spinnerImage = false;
                 });
-
             }
         };
     }]);

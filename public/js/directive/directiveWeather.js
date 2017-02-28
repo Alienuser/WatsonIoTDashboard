@@ -9,28 +9,17 @@
             link: function ($scope) {
                 $scope.showMessage = false;
 
-                // Define the selects
-                $scope.locals = [{
-                    value: '52.519271,13.405915',
-                    label: 'Berlin'
-                }, {
-                    value: '48.784497,9.182615',
-                    label: 'Stuttgart'
-                }, {
-                    value: '48.144984,11.587935',
-                    label: 'München'
-                }, {
-                    value: '48.738979,9.271984',
-                    label: 'Esslingen'
-                }];
+                Weather.getCities()
+                    .then(function (response) {
+                        $scope.locals = response.data.rows;
+                    });
 
                 $scope.getWeather = function () {
                     $scope.spinnerWeather = true;
 
-                    var location = JSON.parse($scope.location);
-                    var locationName = location.label;
-                    var latitude = location.value.split(',')[0];
-                    var longitude = location.value.split(',')[1];
+                    var locationName = location.name;
+                    var latitude = location.latitude;
+                    var longitude = location.longitude;
                     var language = $scope.language;
 
                     Weather.getForcast($scope.$root.dashboard, locationName, latitude, longitude, language)
@@ -47,7 +36,7 @@
                     $scope.spinnerWeather = false;
                     $scope.showMessage = true;
                     $scope.message = message.text;
-                    $scope.weatherIcon = 'img/weathericons/icon' + message.code +'.png';
+                    $scope.weatherIcon = 'img/weathericons/icon' + message.code + '.png';
                 });
             }
         };

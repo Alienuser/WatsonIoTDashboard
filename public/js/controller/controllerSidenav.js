@@ -17,6 +17,11 @@
             $rootScope.toggleMenu();
         };
 
+        $scope.menuChatBot = function () {
+            $location.path("/chatbot");
+            $rootScope.toggleMenu();
+        };
+
         $scope.menuGrovePi1 = function () {
             $location.path("/dashboard/demo1");
             $rootScope.toggleMenu();

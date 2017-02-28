@@ -16,7 +16,7 @@
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>From</label>
                         <md-select ng-model="location">
-                            <md-option ng-repeat="local in locals" value="{{local}}">{{local.label}}</md-option>
+                            <md-option ng-repeat="local in locals" value="{{local.doc}}">{{local.doc.name}}</md-option>
                         </md-select>
                     </md-input-container>
                 </div>
