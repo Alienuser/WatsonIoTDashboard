@@ -3,5 +3,5 @@ applications:
   memory: 512M
   instances: 1
   domain: mybluemix.net
-  name: WatsonIoT-Dashboard
-  host: watsoniot-dashboard
+  name: WatsonIoT-Dashboard-ICCWien
+  host: watsoniot-dashboard-iccwien
